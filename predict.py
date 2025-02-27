@@ -12,7 +12,7 @@ from torchvision import transforms
 
 
 if os.path.exists('model/mnist_model.h5'):
-    model = torch.load('model/mnist_model.h5')
+    model = torch.load('model/mnist_model.h5', weights_only=False)
 else:
     model = Digit().to("cpu")
     optimizer = optim.Adam(model.parameters())
@@ -23,7 +23,7 @@ else:
 
 pipeline = transforms.Compose([
     transforms.Grayscale(num_output_channels=1),  # 转换为灰度图像
-    #transforms.Resize((28, 28)),  # 调整图像大小为28x28像素
+    # transforms.Resize((28, 28)),  # 调整图像大小为28x28像素
     transforms.ToTensor(),  # 转换为张量
     transforms.Normalize((0.1307,), (0.3081,))  # 标准化
 ])

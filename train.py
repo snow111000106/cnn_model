@@ -24,4 +24,4 @@ if __name__ == '__main__':
     optimizer = optim.Adam(model.parameters())
     for epoch in range(1, 5):
         train_model(model, optimizer, epoch, train_loader)
-    torch.save(model, 'model/mnist_model.h5')
+    torch.save(model, 'model/mnist_model_2.h5')

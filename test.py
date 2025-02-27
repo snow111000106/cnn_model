@@ -23,6 +23,6 @@ def model_test(model, test_loader):
 
 
 if __name__ == '__main__':
-    model = torch.load('model/mnist_model.h5')
+    model = torch.load('model/mnist_model.h5', weights_only=False)
     optimizer = optim.Adam(model.parameters())
     model_test(model, test_loader)
