@@ -93,7 +93,7 @@ def train_model(model, devices, train_loader, optimizer, epoch):
 
         loss.backward()  # 反向传播，计算梯度
         optimizer.step()  # 更新参数
-        if batch_index % 3000 == 0:  # 每 3000 个批次打印一次损失值
+        if batch_index % 150 == 0:  # 每 3000 个批次打印一次损失值
             print('train epoch:{}\t Loss:{:.6f}'.format(epoch, loss.item()))
 
 

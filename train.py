@@ -15,13 +15,13 @@ def train_model(model, optimizer, epoch, train_loader):
 
         loss.backward()
         optimizer.step()
-        if batch_index % 3000 == 0:
+        if batch_index % 375 == 0:
             print('train epoch:{}\t Loss:{:.6f}'.format(epoch, loss.item()))
 
 
 if __name__ == '__main__':
     model = Digit().to("cpu")
     optimizer = optim.Adam(model.parameters())
-    for epoch in range(1, 5):
+    for epoch in range(1, 2):
         train_model(model, optimizer, epoch, train_loader)
-    torch.save(model, 'model/mnist_model_2.h5')
+    torch.save(model, 'model/mnist_model_3.h5')
